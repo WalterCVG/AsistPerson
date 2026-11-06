@@ -1,0 +1,399 @@
+VERSION 5.00
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
+Begin VB.Form Tnivel 
+   Caption         =   "Nivel remunerado"
+   ClientHeight    =   6780
+   ClientLeft      =   60
+   ClientTop       =   450
+   ClientWidth     =   9720
+   LinkTopic       =   "Form1"
+   LockControls    =   -1  'True
+   Picture         =   "TNivel.frx":0000
+   ScaleHeight     =   6780
+   ScaleWidth      =   9720
+   StartUpPosition =   3  'Windows Default
+   Begin VB.TextBox txBuscar 
+      Height          =   285
+      Left            =   3480
+      MaxLength       =   35
+      TabIndex        =   12
+      Top             =   3960
+      Width           =   4575
+   End
+   Begin VB.CommandButton cmdsalir 
+      Height          =   495
+      Left            =   8400
+      Picture         =   "TNivel.frx":80266
+      Style           =   1  'Graphical
+      TabIndex        =   9
+      ToolTipText     =   "Cerrar"
+      Top             =   6240
+      Width           =   615
+   End
+   Begin VB.Frame Frame1 
+      Height          =   1695
+      Left            =   240
+      TabIndex        =   4
+      Top             =   4560
+      Width           =   7575
+      Begin VB.TextBox TxcodNivel 
+         Height          =   285
+         Left            =   1800
+         Locked          =   -1  'True
+         MaxLength       =   10
+         TabIndex        =   6
+         Top             =   360
+         Width           =   1095
+      End
+      Begin VB.TextBox Txdescripcion 
+         Height          =   285
+         Left            =   1800
+         Locked          =   -1  'True
+         MaxLength       =   35
+         TabIndex        =   5
+         Top             =   960
+         Width           =   5415
+      End
+      Begin VB.Label Label4 
+         Caption         =   "Codigo"
+         ForeColor       =   &H00000000&
+         Height          =   255
+         Left            =   480
+         TabIndex        =   8
+         Top             =   360
+         Width           =   615
+      End
+      Begin VB.Label Label3 
+         Caption         =   "Descripcion"
+         ForeColor       =   &H00FF0000&
+         Height          =   255
+         Left            =   480
+         TabIndex        =   7
+         Top             =   960
+         Width           =   855
+      End
+   End
+   Begin VB.Frame Frame2 
+      Height          =   1575
+      Left            =   7920
+      TabIndex        =   0
+      Top             =   4560
+      Width           =   1455
+      Begin VB.CommandButton CmdEliminar 
+         Caption         =   "Eli&minar"
+         Height          =   375
+         Left            =   240
+         TabIndex        =   3
+         Top             =   960
+         Width           =   975
+      End
+      Begin VB.CommandButton CmdEditar 
+         Caption         =   "&Editar"
+         Height          =   375
+         Left            =   240
+         TabIndex        =   2
+         Top             =   600
+         Width           =   975
+      End
+      Begin VB.CommandButton Cmdnuevo 
+         Caption         =   "&Nuevo"
+         Height          =   375
+         Left            =   240
+         TabIndex        =   1
+         Top             =   240
+         Width           =   975
+      End
+   End
+   Begin MSDataGridLib.DataGrid DataGrid1 
+      Height          =   3495
+      Left            =   240
+      TabIndex        =   10
+      Top             =   120
+      Width           =   9375
+      _ExtentX        =   16536
+      _ExtentY        =   6165
+      _Version        =   393216
+      HeadLines       =   1
+      RowHeight       =   15
+      BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Caption         =   "Contenida de Tabla"
+      ColumnCount     =   2
+      BeginProperty Column00 
+         DataField       =   ""
+         Caption         =   ""
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   10250
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      BeginProperty Column01 
+         DataField       =   ""
+         Caption         =   ""
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   10250
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      SplitCount      =   1
+      BeginProperty Split0 
+         BeginProperty Column00 
+         EndProperty
+         BeginProperty Column01 
+         EndProperty
+      EndProperty
+   End
+   Begin VB.Label Label2 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Descripcion a Ubicar :"
+      ForeColor       =   &H80000001&
+      Height          =   195
+      Left            =   1320
+      TabIndex        =   11
+      Top             =   3960
+      Width           =   1575
+   End
+   Begin VB.Shape Shape1 
+      BackColor       =   &H00E0E0E0&
+      BackStyle       =   1  'Opaque
+      Height          =   495
+      Left            =   1080
+      Shape           =   4  'Rounded Rectangle
+      Top             =   3840
+      Width           =   7755
+   End
+End
+Attribute VB_Name = "Tnivel"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Dim rs As New ADODB.Recordset
+Dim DD As New ADODB.Recordset
+Dim Sw As Boolean
+Private Sub Form_Load()
+    Set DD = New Recordset
+    With DD
+      .Fields.Append "CodNivel", adChar, 10
+      .Fields.Append "descripcion", adChar, 35
+      .Open
+    End With
+    Set DataGrid1.DataSource = DD
+    For i = 0 To DataGrid1.Columns.Count - 1
+     With DataGrid1.Columns(i)
+         Select Case i
+         Case 0
+         '.Caption = "Codigo"
+          .Width = Me.TextWidth(String(6, "S"))
+         Case 1
+          '.Caption = "descripcion"
+          .Width = Me.TextWidth(String(50, "S"))
+         End Select
+         '.NumberFormat = "##,##0.0"
+         .Locked = True
+     End With
+    Next
+    Set rs = New Recordset
+    sql = "SELECT * FROM CpNivel"
+    rs.Open sql, Cnx, adOpenStatic, adLockReadOnly, adCmdText
+    If Not rs.EOF Then
+    rs.MoveFirst
+    Do While Not rs.EOF
+       DD.AddNew
+       DD!codnivel = rs!codnivel
+       DD!descripcion = IIf(IsNull(rs!descripcion), "", rs!descripcion)
+       DD.Update
+       rs.MoveNext
+    Loop
+    End If
+    rs.Close
+    desabilitatextos
+    Limpiacampos
+End Sub
+Private Sub DataGrid1_Click()
+   If DD.RecordCount = 0 Then Exit Sub      'bloquea seleccion en dbgrid vacio
+   txBuscar = ""
+   TxcodNivel = DataGrid1.Columns(0)
+   Txdescripcion = DataGrid1.Columns(1)
+   CmdEditar.Enabled = True
+   CmdEliminar.Enabled = True
+End Sub
+Private Sub DataGrid1_HeadClick(ByVal ColIndex As Integer)
+  With DD
+    If (.Sort = .Fields(ColIndex).[Name] & " Asc") Then
+       .Sort = .Fields(ColIndex).[Name] & " Desc"
+    Else
+       .Sort = .Fields(ColIndex).[Name] & " Asc"
+    End If
+  End With
+  Call Limpiacampos
+End Sub
+Private Sub cmdNuevo_Click()
+    If wrights = "CON" Then
+       MsgBox "Usuario No Autorizado", vbExclamation
+       Exit Sub
+    End If
+  If Cmdnuevo.Caption = "&Nuevo" Then
+    Limpiacampos
+    habilitatextos
+    TxcodNivel.Locked = False
+    TxcodNivel.SetFocus
+    CmdEliminar.Enabled = False
+    Sw = True
+    Cmdnuevo.Caption = "&Grabar"
+    CmdEditar.Caption = "&Cancelar"
+    CmdEditar.Enabled = True
+  Else                  'Grabar
+    On Error GoTo err_trans
+    Cnx.BeginTrans
+    Dim sql As String
+    If Sw Then
+       sql = "INSERT INTO CpNIVEL(CodNivel,descripcion,usuario,fecha) "
+       sql = sql + " VALUES('" + TxcodNivel + "','" + Trim(Txdescripcion) + "','" + wUsuario + "','" + Format(Date, "yyymmdd") + "')"
+    Else
+       sql = "UPDATE CpNIVEL SET descripcion='" + Trim(Txdescripcion) + "',usuario='" + wUsuario + "',fecha='" + Format(Date, "yyyymmdd") + "'"
+       sql = sql + " WHERE CodNivel='" + TxcodNivel & "'"
+    End If
+    Cnx.Execute sql
+    Cnx.CommitTrans
+    If Sw Then
+       DD.AddNew
+       DD!codnivel = TxcodNivel
+    End If
+    DD!descripcion = Trim(Txdescripcion)
+    DD.Update
+    desabilitatextos
+    Limpiacampos
+    CmdEliminar.Enabled = True
+    Cmdnuevo.Caption = "&Nuevo"
+    CmdEditar.Caption = "&Editar"
+    DataGrid1.Refresh
+    CmdEditar.Enabled = False
+    CmdEliminar.Enabled = False
+    DataGrid1.SetFocus
+    Exit Sub
+err_trans:
+    MsgBox Err.Description
+  End If
+End Sub
+Private Sub Cmdeditar_Click()
+   If wrights = "CON" Then
+       MsgBox "Usuario No Autorizado", vbExclamation
+       Exit Sub
+   End If
+   If CmdEditar.Caption = "&Editar" Then
+    habilitatextos
+    Txdescripcion.SetFocus
+    CmdEliminar.Enabled = False
+    Sw = False
+    Cmdnuevo.Caption = "&Grabar"
+    CmdEditar.Caption = "&Cancelar"
+  Else                   'Cancelar
+    desabilitatextos
+    Limpiacampos
+    CmdEliminar.Enabled = True
+    Cmdnuevo.Caption = "&Nuevo"
+    CmdEditar.Caption = "&Editar"
+    CmdEditar.Enabled = False
+    CmdEliminar.Enabled = False
+    DataGrid1.SetFocus
+  End If
+End Sub
+Private Sub CmdEliminar_Click()
+    If wrights = "CON" Then
+       MsgBox "Usuario No Autorizado", vbExclamation
+       Exit Sub
+    End If
+    Set rs = New Recordset
+    sql = "SELECT * FROM CpGeneral WHERE  (baja is NULL) and (codniv='" & Trim(TxcodNivel) & "')"
+    rs.Open sql, Cnx, adOpenStatic, adLockReadOnly, adCmdText
+    If Not r_d.EOF Then
+       MsgBox "Hay Registros con dicho Nivel", vbExclamation
+       rs.Close
+       Exit Sub
+    End If
+    rs.Close
+    If MsgBox("Elimina registro ", vbOKCancel + vbQuestion, "Confirme") <> vbCancel Then
+      Cnx.Execute "DELETE FROM CpNivel WHERE codNivel='" & TxcodNivel & "'"
+      DD.Delete
+      'DataGrid1.Refresh
+      Limpiacampos
+    End If
+End Sub
+Private Sub cmdsalir_Click()
+  Set r_d = Nothing
+  Set DD = Nothing
+  Set rs = Nothing
+  Unload Me
+  Me.Hide
+End Sub
+Sub habilitatextos()
+    Txdescripcion.Locked = False
+End Sub
+Sub desabilitatextos()
+   TxcodNivel.Locked = True
+   Txdescripcion.Locked = True
+End Sub
+Sub Limpiacampos()
+  txBuscar = ""
+  TxcodNivel = "":  Txdescripcion = ""
+End Sub
+
+
+Private Sub txcodNivel_KeyPress(KeyAscii As Integer)
+   If KeyAscii = 13 And Trim(TxcodNivel) <> "" Then
+     Txdescripcion.SetFocus
+     Exit Sub
+   End If
+   If Not ((KeyAscii >= 48 And KeyAscii <= 57) Or KeyAscii = 46) And Not KeyAscii = 8 Then
+       KeyAscii = 0
+   End If
+End Sub
+Private Sub Txdescripcion_KeyPress(KeyAscii As Integer)
+   If KeyAscii = 13 Then
+     Txdescripcion = Trim(Txdescripcion)
+     Cmdnuevo.SetFocus
+     Exit Sub
+   End If
+End Sub
+Private Sub TxBuscar_Change()
+    Dim cBuscar As String
+    cpuntero = DataGrid1.Bookmark
+    If txBuscar.Text = "" Then Exit Sub
+    cBuscar = "descripcion like '*" & txBuscar.Text & "*'"
+    DD.MoveFirst
+    DD.Find (cBuscar)
+    If DD.EOF Then
+       txBuscar.BackColor = &HFF&
+    Else
+       txBuscar.BackColor = &H80000005
+       DataGrid1.Refresh
+    End If
+End Sub

@@ -1,0 +1,1103 @@
+VERSION 5.00
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
+Begin VB.Form CpMenu 
+   Caption         =   "Menu Principal"
+   ClientHeight    =   6930
+   ClientLeft      =   60
+   ClientTop       =   750
+   ClientWidth     =   9390
+   LockControls    =   -1  'True
+   Picture         =   "CpMenu.frx":0000
+   ScaleHeight     =   6930
+   ScaleWidth      =   9390
+   Begin VB.Timer Timer2 
+      Interval        =   60000
+      Left            =   1080
+      Top             =   6000
+   End
+   Begin VB.TextBox TxAño 
+      BorderStyle     =   0  'None
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FF0000&
+      Height          =   405
+      Left            =   7800
+      Locked          =   -1  'True
+      MaxLength       =   4
+      TabIndex        =   4
+      Top             =   5640
+      Width           =   795
+   End
+   Begin VB.CommandButton CmdManual 
+      BackColor       =   &H00FFFFC0&
+      Caption         =   "Manual"
+      Height          =   975
+      Left            =   7680
+      Picture         =   "CpMenu.frx":80266
+      Style           =   1  'Graphical
+      TabIndex        =   2
+      Top             =   3360
+      Width           =   1335
+   End
+   Begin VB.Timer Timer1 
+      Interval        =   1
+      Left            =   1320
+      Top             =   5040
+   End
+   Begin MSComCtl2.UpDown UpDown1 
+      Height          =   495
+      Left            =   8640
+      TabIndex        =   3
+      Top             =   5640
+      Width           =   255
+      _ExtentX        =   450
+      _ExtentY        =   873
+      _Version        =   393216
+      Enabled         =   -1  'True
+   End
+   Begin VB.Label lblinicio 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Lblinicio"
+      ForeColor       =   &H00FF0000&
+      Height          =   255
+      Left            =   120
+      TabIndex        =   7
+      Top             =   5880
+      Width           =   855
+   End
+   Begin VB.Label Lblping 
+      BackStyle       =   0  'Transparent
+      Caption         =   "ping"
+      BeginProperty Font 
+         Name            =   "Arial Narrow"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000000C0&
+      Height          =   375
+      Left            =   120
+      TabIndex        =   6
+      Top             =   6120
+      Width           =   855
+   End
+   Begin VB.Label Label1 
+      Alignment       =   2  'Center
+      BackColor       =   &H00E0E0E0&
+      BackStyle       =   0  'Transparent
+      Caption         =   "Periodo Activo"
+      BeginProperty Font 
+         Name            =   "Microsoft Sans Serif"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FF0000&
+      Height          =   255
+      Left            =   7560
+      TabIndex        =   5
+      Top             =   5400
+      Width           =   1455
+   End
+   Begin VB.Label LblDS 
+      Alignment       =   1  'Right Justify
+      BackStyle       =   0  'Transparent
+      Caption         =   "LblDS"
+      ForeColor       =   &H00008000&
+      Height          =   255
+      Left            =   6960
+      TabIndex        =   1
+      Top             =   6360
+      Width           =   2055
+   End
+   Begin VB.Label Lblhora 
+      Alignment       =   2  'Center
+      BackColor       =   &H00E0E0E0&
+      BackStyle       =   0  'Transparent
+      Caption         =   "18:00:00"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   26.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FF0000&
+      Height          =   495
+      Left            =   3240
+      TabIndex        =   0
+      Top             =   5640
+      Width           =   2295
+   End
+   Begin VB.Menu opcion_1 
+      Caption         =   "&Tablas"
+      Begin VB.Menu opc11 
+         Caption         =   "Cadena Funcional"
+      End
+      Begin VB.Menu opc12 
+         Caption         =   "UNIDADES DE LA ORGANIZACIÓN"
+      End
+      Begin VB.Menu Opc13 
+         Caption         =   "Unidad de Programación de Roles (UPR)"
+      End
+      Begin VB.Menu raya11 
+         Caption         =   "-"
+      End
+      Begin VB.Menu opc14 
+         Caption         =   "Cargos"
+      End
+      Begin VB.Menu Opc15 
+         Caption         =   "Grupo del Trabajador"
+      End
+      Begin VB.Menu Opc16 
+         Caption         =   "Horarios de trabajo"
+      End
+      Begin VB.Menu Opc17 
+         Caption         =   "&Tarifas de guardias"
+      End
+      Begin VB.Menu Opc18 
+         Caption         =   "Ocurrencias"
+      End
+      Begin VB.Menu raya12 
+         Caption         =   "-"
+      End
+      Begin VB.Menu Opc19 
+         Caption         =   "&FERIADOS"
+      End
+      Begin VB.Menu opc110 
+         Caption         =   "Tablas "
+         Begin VB.Menu Opc1101 
+            Caption         =   "Tablas CP"
+         End
+         Begin VB.Menu Opc1102 
+            Caption         =   "Tablas Auxiliares"
+         End
+         Begin VB.Menu opc1103 
+            Caption         =   "Personal Susalud"
+         End
+      End
+      Begin VB.Menu Opc111 
+         Caption         =   "Nivel Remunerado"
+      End
+      Begin VB.Menu Opc112 
+         Caption         =   "&CRONOGRAMA DE PROGRAMACIÓN"
+      End
+   End
+   Begin VB.Menu Opcion_2 
+      Caption         =   "&Registro"
+      Begin VB.Menu opc21 
+         Caption         =   "&Maestra de Trabajadores"
+      End
+      Begin VB.Menu Opc22 
+         Caption         =   "&Programa Mensual ADMINISTRATIVOS"
+      End
+      Begin VB.Menu opc23 
+         Caption         =   "&Programa ASISTENCIALES"
+         Begin VB.Menu opc231 
+            Caption         =   "DIRECTORIO"
+         End
+         Begin VB.Menu opc232 
+            Caption         =   "HORAS COMPLEMENTARIAS"
+         End
+      End
+      Begin VB.Menu raya21 
+         Caption         =   "-"
+      End
+      Begin VB.Menu Opc24 
+         Caption         =   "&Autorizaciones, Motivos Personales"
+      End
+      Begin VB.Menu Opc25 
+         Caption         =   "&Boletas Cambio de Turno"
+      End
+      Begin VB.Menu raya22 
+         Caption         =   "-"
+      End
+      Begin VB.Menu Opc26 
+         Caption         =   "&Carga Marcación"
+      End
+      Begin VB.Menu Opc27 
+         Caption         =   "&Editor de Marcas"
+      End
+      Begin VB.Menu Opc28 
+         Caption         =   "&Programa Directorio - Excepciones"
+      End
+      Begin VB.Menu raya23 
+         Caption         =   "-"
+      End
+      Begin VB.Menu Opc29 
+         Caption         =   "&NUTRICIÓN - Guardia Asistencial Mensual"
+      End
+   End
+   Begin VB.Menu opcion_3 
+      Caption         =   "&Consultas y reportes"
+      Begin VB.Menu opc31 
+         Caption         =   "Directorio"
+      End
+      Begin VB.Menu opc32 
+         Caption         =   "&RECORD DE MARCACIÓN"
+      End
+      Begin VB.Menu opc33 
+         Caption         =   "&Masivo - record servidor(es)"
+      End
+      Begin VB.Menu opc34 
+         Caption         =   "&Inasistencia/Tardanza del periodo"
+      End
+      Begin VB.Menu opc35 
+         Caption         =   "&Jefaturas de Guardia"
+      End
+      Begin VB.Menu opc36 
+         Caption         =   "Repor&te Multiple"
+      End
+      Begin VB.Menu Opc37 
+         Caption         =   "Cumplimiento Programa (Hoja XLS)"
+      End
+      Begin VB.Menu raya3 
+         Caption         =   "-"
+      End
+      Begin VB.Menu Opc38 
+         Caption         =   "Programa MENSUAL"
+      End
+      Begin VB.Menu Opc39 
+         Caption         =   "Pago Guardias- Filtrado"
+      End
+   End
+   Begin VB.Menu Opcion_4 
+      Caption         =   "&Resoluciones"
+      Begin VB.Menu opc41 
+         Caption         =   "&Presupuesto 100% Pago Guardias"
+      End
+      Begin VB.Menu opc42 
+         Caption         =   "&Descuento Inasistencia/Tardanza"
+      End
+      Begin VB.Menu opc43 
+         Caption         =   "&Dsctos. Motivos Particulares"
+      End
+      Begin VB.Menu opc44 
+         Caption         =   "&Pago Guardias (Real proyectado)"
+      End
+      Begin VB.Menu raya41 
+         Caption         =   "-"
+      End
+      Begin VB.Menu opc45 
+         Caption         =   "&Compensacion por Jefatura de Guardia"
+      End
+      Begin VB.Menu Opc46 
+         Caption         =   "&Abono - Diferencia Compensacion pago de Guardia"
+      End
+      Begin VB.Menu opc47 
+         Caption         =   "Dscto - Diferencia Compensacion pago de Guardia "
+      End
+   End
+   Begin VB.Menu Opcion_5 
+      Caption         =   "&Utilitarios"
+      Begin VB.Menu opc51 
+         Caption         =   "&Actualiza Remuneración"
+      End
+      Begin VB.Menu opc52 
+         Caption         =   "&Tablas Nuevo Periodo"
+      End
+      Begin VB.Menu raya51 
+         Caption         =   "-"
+      End
+      Begin VB.Menu opc53 
+         Caption         =   "&Usuarios"
+      End
+      Begin VB.Menu opc54 
+         Caption         =   "Tabla de Contenidos"
+      End
+      Begin VB.Menu opc55 
+         Caption         =   "File configurador"
+      End
+      Begin VB.Menu raya52 
+         Caption         =   "-"
+      End
+      Begin VB.Menu opc56 
+         Caption         =   "Cambio de Tarjeta"
+      End
+      Begin VB.Menu opc57 
+         Caption         =   "Generar Directorio XML "
+      End
+      Begin VB.Menu opc58 
+         Caption         =   "Actualizar Cadena"
+      End
+      Begin VB.Menu opc59 
+         Caption         =   "Varios"
+      End
+   End
+   Begin VB.Menu opcout 
+      Caption         =   "&Salir"
+   End
+End
+Attribute VB_Name = "CpMenu"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+'--Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Long, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Long) As Long
+
+Dim nIntervPing As Integer
+Private Sub Form_Load()
+   lblinicio.Caption = Format(Time, "hh:mm:ss")
+   Lblping.Caption = ""
+   nmintPing = 0    'control mints  para lanzar PING
+   Me.Caption = "Menu Principal - " & genaño & "   -   Sesión: " + wUsuNombre
+   LblDS.Caption = cICatal + "-" + UCase(IIf(Val(Right(cDSource, 2)) > 0, Right(cDSource, 2), Trim(cDSource)))
+   TxAño = genaño
+   If wUsuario <> "AMASTER" Then
+      Opc29.Visible = False
+   End If
+End Sub
+
+Private Sub opc11_Click()
+   acceso ("11")
+   If wacceso Then
+      Load tCadena
+      tCadena.Left = 0: tCadena.Top = 0
+      tCadena.Refresh
+      tCadena.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc12_Click()
+   acceso ("12")
+   If wacceso Then
+      Load CCosto
+      CCosto.Left = 0: CCosto.Top = 0
+      CCosto.Refresh
+      CCosto.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc13_Click()
+   acceso ("13")
+   If wacceso Then
+      Load TUndPrgRol
+      TUndPrgRol.Left = 0: TUndPrgRol.Top = 0
+      TUndPrgRol.Refresh
+      TUndPrgRol.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc14_Click()
+   acceso ("14")
+   If wacceso Then
+      Load tCargos
+      tCargos.Left = 0: tCargos.Top = 0
+      tCargos.Refresh
+      tCargos.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc15_Click()
+   acceso ("15")
+   If wacceso Then
+      Load tGrupos
+      tGrupos.Left = 0: tGrupos.Top = 0
+      tGrupos.Refresh
+      tGrupos.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc16_Click()
+   acceso ("16")
+   If wacceso Then
+      Load tHorarios
+      tHorarios.Left = 0: tHorarios.Top = 0
+      tHorarios.Refresh
+      tHorarios.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc17_Click()
+   acceso ("17")
+   If wacceso Then
+      Load tTarifas
+      tTarifas.Left = 0: tTarifas.Top = 0
+      tTarifas.Refresh
+      tTarifas.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc18_Click()
+   acceso ("18")
+   If wacceso Then
+      Load tOcurrencia
+      tOcurrencia.Left = 0: tOcurrencia.Top = 0
+      tOcurrencia.Refresh
+      tOcurrencia.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc19_Click()
+   acceso ("19")
+   If wacceso Then
+      Load MFeriados
+      MFeriados.Left = 0: MFeriados.Top = 0
+      MFeriados.Refresh
+      MFeriados.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc1101_Click()
+   acceso ("110")
+   If wacceso Then
+      Load TCptablas
+      TCptablas.Left = 0: TCptablas.Top = 0
+      TCptablas.Refresh
+      TCptablas.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc1102_Click()
+   acceso ("110")
+   If wacceso Then
+      Load tAuxiliar
+      tAuxiliar.Left = 0: tAuxiliar.Top = 0
+      tAuxiliar.Refresh
+      tAuxiliar.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc1103_Click()
+   acceso ("110")
+   If wacceso Then
+      Load tProfSalud
+      tProfSalud.Left = 0: tProfSalud.Top = 0
+      tProfSalud.Refresh
+      tProfSalud.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+
+Private Sub opc111_Click()
+   acceso ("111")
+   If wacceso Then
+      Load Tnivel
+      Tnivel.Left = 0: Tnivel.Top = 0
+      Tnivel.Refresh
+      Tnivel.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc112_Click()
+   acceso ("112")
+   If wacceso Then
+      Load TCronograma
+      TCronograma.Left = 0: TCronograma.Top = 0
+      TCronograma.Refresh
+      TCronograma.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+
+Private Sub opc21_Click()
+   acceso ("21")
+   If wacceso Then
+      Load General
+      General.Left = 0: General.Top = 0
+      General.Refresh
+      General.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc22_Click()
+   acceso ("22")
+   If wacceso Then
+      Load ProgAdministrativo
+      ProgAdministrativo.Left = 0: ProgAdministrativo.Top = 0
+      ProgAdministrativo.Refresh
+      ProgAdministrativo.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc231_Click()
+   acceso ("23")
+   If wacceso Or weditor = "S" Then
+      Load ProgASISTENCIAL
+      ProgASISTENCIAL.Left = 0: ProgASISTENCIAL.Top = 0
+      ProgASISTENCIAL.Refresh
+      ProgASISTENCIAL.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc232_Click()
+   acceso ("23")
+   If wacceso Or weditor = "S" Then
+   'If wrights = "MAS" Then
+      Load ProgComplementarios
+      ProgComplementarios.Left = 0: ProgComplementarios.Top = 0
+      ProgComplementarios.Refresh
+      ProgComplementarios.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+
+Private Sub opc24_Click()
+   acceso ("24")
+   If wacceso Then
+      Load Autorizaciones
+      Autorizaciones.Left = 0: Autorizaciones.Top = 0
+      Autorizaciones.Refresh
+      Autorizaciones.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc25_Click()
+   acceso ("25")
+   If wacceso Or weditor = "S" Then
+      Load CambioTurno
+      CambioTurno.Left = 0: CambioTurno.Top = 0
+      CambioTurno.Refresh
+      CambioTurno.Show
+   Else
+      MsgBox "Usuario No Autorizado ", vbExclamation
+      Exit Sub
+   End If
+End Sub
+
+Private Sub opc26_Click()
+   acceso ("26")
+   If wacceso Then
+      Load CargaMarcas
+      CargaMarcas.Left = 0: CargaMarcas.Top = 0
+      CargaMarcas.Refresh
+      CargaMarcas.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc27_Click()
+   acceso ("27")
+   If wacceso Then
+      Load EditaMarcas
+      EditaMarcas.Left = 0: EditaMarcas.Top = 0
+      EditaMarcas.Refresh
+      EditaMarcas.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc28_Click()
+   acceso ("28")
+   If wacceso Then
+      Load ProgEspecial
+      ProgEspecial.Left = 0: ProgEspecial.Top = 0
+      ProgEspecial.Refresh
+      ProgEspecial.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc29_Click()
+   acceso ("29")
+   If wacceso Then
+      Load DirMesNutricion
+      DirMesNutricion.Left = 0: DirMesNutricion.Top = 0
+      DirMesNutricion.Refresh
+      DirMesNutricion.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc31_Click()
+   acceso ("31")
+   If wacceso Then
+      Load RptDirectorio
+      RptDirectorio.Left = 0: RptDirectorio.Top = 0
+      RptDirectorio.Refresh
+      RptDirectorio.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc32_Click()
+   acceso ("32")
+   If wacceso Then
+      Load RecMarcasRS
+      RecMarcasRS.Left = 0: RecMarcasRS.Top = 0
+      RecMarcasRS.Refresh
+      RecMarcasRS.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc33_Click()
+   acceso ("33")
+   If wacceso Then
+      Load RecMarcasQuery
+      RecMarcasQuery.Left = 0: RecMarcasQuery.Top = 0
+      RecMarcasQuery.Refresh
+      RecMarcasQuery.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+
+Private Sub opc34_Click()
+   acceso ("34")
+   If wacceso Then
+      Load TardaInasis
+      TardaInasis.Left = 0: TardaInasis.Top = 0
+      TardaInasis.Refresh
+      TardaInasis.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc35_Click()
+   acceso ("35")
+   If wacceso Then
+      Load JGuardias
+      JGuardias.Left = 0: JGuardias.Top = 0
+      JGuardias.Refresh
+      JGuardias.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc36_Click()
+   acceso ("36")
+   If wacceso Then
+      Load QMultiple
+      QMultiple.Left = 0: QMultiple.Top = 0
+      QMultiple.Refresh
+      QMultiple.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc37_Click()
+   acceso ("37")
+   If wacceso Then
+      Load CPcumplimientoProg
+      CPcumplimientoProg.Left = 0: CPcumplimientoProg.Top = 0
+      CPcumplimientoProg.Refresh
+      CPcumplimientoProg.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc38_Click()
+   acceso ("38")
+   If wacceso Then
+      Load QueryPrograma
+      QueryPrograma.Left = 0: QueryPrograma.Top = 0
+      QueryPrograma.Refresh
+      QueryPrograma.Show
+   Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+   End If
+End Sub
+Private Sub opc39_Click()
+    acceso ("39")
+    If wacceso Or wrights = "MAS" Then
+       Load PresPGFiltrado
+       PresPGFiltrado.Left = 0: PresPGFiltrado.Top = 0
+       PresPGFiltrado.Refresh
+       PresPGFiltrado.Show
+    Else
+       MsgBox "Usuario No Autorizado", vbExclamation
+       Exit Sub
+    End If
+End Sub
+
+Private Sub opc41_Click()
+    acceso ("41")
+    If wacceso Or wrights = "MAS" Then
+       Load PresPgoGuar
+       PresPgoGuar.Left = 0: PresPgoGuar.Top = 0
+       PresPgoGuar.Refresh
+       PresPgoGuar.Show
+    Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+    End If
+End Sub
+
+Private Sub opc42_Click()
+    acceso ("42")
+    If wacceso Or wrights = "MAS" Then
+       Load ResDscto
+       ResDscto.Left = 0: ResDscto.Top = 0
+       ResDscto.Refresh
+       ResDscto.Show
+    Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+    End If
+End Sub
+Private Sub opc43_Click()
+    acceso ("43")
+    If wacceso Or wrights = "MAS" Then
+       Load ResMP
+       ResMP.Left = 0: ResMP.Top = 0
+       ResMP.Refresh
+       ResMP.Show
+    Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+    End If
+End Sub
+Private Sub opc44_Click()
+    acceso ("44")
+    If wacceso Or wrights = "MAS" Then
+       Load ResPgoGuarProy
+       ResPgoGuarProy.Left = 0: ResPgoGuarProy.Top = 0
+       ResPgoGuarProy.Refresh
+       ResPgoGuarProy.Show
+    Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+    End If
+End Sub
+Private Sub opc45_Click()
+    acceso ("45")
+    If wacceso Or wrights = "MAS" Then
+       Load ResPagoJGuar
+       ResPagoJGuar.Left = 0: ResPagoJGuar.Top = 0
+       ResPagoJGuar.Refresh
+       ResPagoJGuar.Show
+    Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+    End If
+End Sub
+Private Sub opc46_Click()
+    acceso ("46")
+    If wacceso Or wrights = "MAS" Then
+       Load ResPgoGuarAbon
+       ResPgoGuarAbon.Left = 0: ResPgoGuarAbon.Top = 0
+       ResPgoGuarAbon.Refresh
+       ResPgoGuarAbon.Show
+    Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+    End If
+End Sub
+Private Sub opc47_Click()
+    acceso ("47")
+    If wacceso Or wrights = "MAS" Then
+       Load ResPgoGuarDscto
+       ResPgoGuarDscto.Left = 0: ResPgoGuarDscto.Top = 0
+       ResPgoGuarDscto.Refresh
+       ResPgoGuarDscto.Show
+    Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+    End If
+End Sub
+
+Private Sub opc51_Click()
+    acceso ("51")
+    If wacceso Or wrights = "MAS" Then
+       Load ActRemTotal
+       ActRemTotal.Left = 0: ActRemTotal.Top = 0
+       ActRemTotal.Refresh
+       ActRemTotal.Show
+    Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+    End If
+End Sub
+Private Sub opc52_Click()
+    acceso ("52")
+    If wacceso Or wrights = "MAS" Then
+       Load TblasNvoPeriodo
+       TblasNvoPeriodo.Left = 0: TblasNvoPeriodo.Top = 0
+       TblasNvoPeriodo.Show
+    Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+    End If
+End Sub
+Private Sub opc53_Click()
+    acceso ("53")
+    If wacceso Or wrights = "MAS" Then
+       Load Usuarios
+       Usuarios.Left = 0: Usuarios.Top = 0
+       Usuarios.Refresh
+       Usuarios.Show
+    Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+    End If
+End Sub
+Private Sub opc54_Click()
+    acceso ("54")
+    If wacceso Or wrights = "MAS" Then
+       Load AcercaDe
+       AcercaDe.Left = 0: AcercaDe.Top = 0
+       AcercaDe.Show
+    Else
+      MsgBox "Usuario No Autorizado", vbExclamation
+      Exit Sub
+    End If
+End Sub
+Private Sub opc55_Click()
+    'acceso ("55")
+    If wrights = "MAS" Then       'wacceso Or
+       Load VeriConex       'ChkVarios
+       VeriConex.Left = 0: VeriConex.Top = 0
+       VeriConex.Refresh
+       VeriConex.Show
+    Else
+      MsgBox "Acceso solo Gestor Master", vbExclamation
+      Exit Sub
+    End If
+End Sub
+Private Sub opc56_Click()
+    acceso ("56")
+    If wacceso Or wrights = "MAS" Then
+       Load ChkTarjeta     'VeriConex
+       ChkTarjeta.Left = 0: ChkTarjeta.Top = 0
+       ChkTarjeta.Refresh
+       ChkTarjeta.Show
+    Else
+      MsgBox "Acceso denegado..", vbExclamation
+      Exit Sub
+    End If
+End Sub
+Private Sub opc57_Click()
+    acceso ("57")
+    If wacceso Or wrights = "MAS" Then
+       Load GenDirXML       'TransFTP
+       GenDirXML.Left = 0: GenDirXML.Top = 0
+       GenDirXML.Refresh
+       GenDirXML.Show
+    Else
+      MsgBox "Acceso denegado..", vbExclamation
+      Exit Sub
+    End If
+End Sub
+
+Private Sub opc58_Click()
+    acceso ("58")
+    If wacceso Or wrights = "MAS" Then
+       Load ChgCadena
+       ChgCadena.Left = 0: ChgCadena.Top = 0
+       ChgCadena.Refresh
+       ChgCadena.Show
+    Else
+      MsgBox "Acceso denegado..", vbExclamation
+      Exit Sub
+    End If
+End Sub
+Private Sub opc59_Click()
+    If wrights = "MAS" Then
+    
+       '--Call Ver_xls
+       '''Call IniciaClave
+       Load Form1
+       Form1.Left = 0: Form1.Top = 0
+       Form1.Refresh
+       Form1.Show
+    Else
+      MsgBox "Acceso denegado..", vbExclamation
+      Exit Sub
+    End If
+End Sub
+
+Private Sub Form_Unload(Cancel As Integer)
+   Unload Me
+   On Error Resume Next
+   Dim ws As Workspace
+   Dim db As Database
+   Dim rs As Recordset
+   For Each ws In Workspaces
+       For Each db In ws.Databases
+           'For Each Rs In db.Recordsets
+           '    Rs.Close
+           '    Set Rs = Nothing
+           'Next
+           'db.Close
+           Set db = Nothing
+       Next
+       ws.Close
+       Set ws = Nothing
+   Next
+   End
+End Sub
+
+Private Sub CmdManual_Click()
+   cObjeto = wmanualPdf
+   Call CmdVerPDF_Click
+End Sub
+Private Sub CmdVerPDF_Click()
+   ShellExecute hwnd, "Open", Trim(cObjeto), vbNullString, vbNullString, SW_NORMAL
+End Sub
+   
+   
+Private Sub opcout_Click()
+   Unload Me
+   On Error Resume Next
+   Dim ws As Workspace
+   Dim db As Database
+   Dim rs As Recordset
+   For Each ws In Workspaces
+       For Each db In ws.Databases
+           'For Each Rs In db.Recordsets
+           '   Rs.Close
+           '   Set Rs = Nothing
+           'Next
+           'db.Close
+           Set db = Nothing
+       Next
+       ws.Close
+       Set ws = Nothing
+   Next
+   End
+End Sub
+
+Private Sub Timer1_Timer()
+   Lblhora.Caption = Format(Time, "hh:mm:ss")
+End Sub
+Private Sub Timer2_Timer()
+   '-lanza ping cada 7 minutos (intervalo 60000milisegundos)
+   nIntervPing = nIntervPing + 1
+   If nIntervPing >= 7 Then
+      nIntervPing = 0
+      Lblping.Caption = Format(Time, "hh:mm:ss")
+      Dim oShell As Object
+      Set oShell = CreateObject("WScript.Shell")
+      oShell.Run "ping -n 1 192.168.1.12", 0, True
+      Set oShell = Nothing
+   End If
+End Sub
+'Public Function CloseAllRecordsets() As Integer
+'On Error Resume Next
+'-Be sure to Close all Data Objects upon Exit - and release memory
+'-Put it on close of the Main Menu - (make sure you have no bound forms open)
+'Dim wsCurr As Workspace
+'Dim dbCurr As Database
+'Dim rs As Recordset
+'Dim Frm As Form
+'For Each wsCurr In Workspaces
+'   For Each dbCurr In wsCurr.Databases
+'      For Each rs In dbCurr.Recordsets
+'         MsgBox "The recordset " & vbCrLf & rs.Name & vbCrLf & _
+'         rs.RecordCount & " record(s) was left open - now closing it.", vbCritical, "Validation"
+'         rs.Close
+'         Set rs = Nothing
+'      Next
+'      dbCurr.Close
+'      Set dbCurr = Nothing
+'    Next
+'    wsCurr.Close
+'    Set wsCurr = Nothing
+'Next
+'End Function
+
+Private Sub UpDown1_DownClick()
+    If TxAño = 2012 Then
+       Exit Sub
+    End If
+    For cont = Forms.Count - 1 To 0 Step -1
+       If Forms(cont).Visible = False Then
+       Else
+          ' Form Abierto
+          If Forms(cont).Name <> "CpMenu" Then
+             Unload Forms(cont)
+          End If
+       End If
+    Next
+    
+    TxAño = TxAño - 1
+    wflg = "NO"
+    w_ano = TxAño
+    Call CompruebaTabla
+    If wflg = "NO" Then
+       TxAño = TxAño + 1
+       Exit Sub
+    End If
+    
+    genaño = Trim(TxAño)
+    Me.Caption = "Menu Principal - " & genaño & "   -   Sesión: " + wUsuNombre
+End Sub
+Private Sub UpDown1_UpClick()
+    For cont = Forms.Count - 1 To 0 Step -1
+       If Forms(cont).Visible = False Then
+       Else
+          ' Form Abierto
+          If Forms(cont).Name <> "CpMenu" Then
+             Unload Forms(cont)
+          End If
+       End If
+    Next
+       
+    TxAño = TxAño + 1
+    wflg = "NO"
+    w_ano = TxAño
+    Call CompruebaTabla
+    If wflg = "NO" Then
+       TxAño = TxAño - 1
+       Exit Sub
+    End If
+    
+    genaño = Trim(TxAño)
+    Me.Caption = "Menu Principal - " & genaño & "   -   Sesión: " + wUsuNombre
+End Sub

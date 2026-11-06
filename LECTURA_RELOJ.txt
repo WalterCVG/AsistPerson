@@ -1,0 +1,11 @@
+  
+  Dim cfecha As String
+  
+  cfecha = Format("20191231")
+  fecha1 = Format(Date, "yyyymmdd")
+  If cfecha <= fecha1 Then
+     MsgBox ("menor " + cfecha)
+  Else
+     MsgBox ("es mayor " + cfecha)
+  End If
+     

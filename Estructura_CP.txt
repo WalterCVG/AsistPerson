@@ -1,0 +1,56 @@
+-- APLICA SOLO CPpersonal   ABRIL-2016
+alter table CPTMDifPgoGuar
+	 add  ccosto varchar(2)  null;
+alter table CPTMDifPgoGuar
+	 add  dsccosto varchar(30)  null;
+alter table CPTMDifPgoGuar
+	 add  codupr varchar(2)  null;
+alter table CPTMDifPgoGuar
+	 add  dscupr varchar(55)  null;
+
+alter table CPTmPagoGuar
+	 add  ccosto varchar(2)  null;
+alter table CPTmPagoGuar
+	 add  dsccosto varchar(30)  null;
+alter table CPTmPagoGuar
+	add  codupr varchar(2)  null;
+alter table CPTmPagoGuar
+	add  dscupr varchar(55)  null;
+
+alter table CPTMResDsct1
+	 add  ccosto varchar(2)  null;
+alter table CPTMResDsct1
+	add  dsccosto varchar(30)  null;
+alter table CPTMResDsct1
+	add  codupr varchar(2)  null;
+alter table CPTMResDsct1
+	add  dscupr varchar(55)  null;
+
+
+alter table CPTMResDscto
+	 add  ccosto varchar(2)  null;
+alter table CPTMResDscto
+	add  dsccosto varchar(30)  null;
+alter table CPTMResDscto
+	add  codupr varchar(2)  null;
+alter table CPTMResDscto
+	add  dscupr varchar(55)  null;
+
+alter table CPTMResJGuar
+	 add  ccosto varchar(2)  null;
+alter table CPTMResJGuar
+	add  dsccosto varchar(30)  null;
+alter table CPTMResJGuar
+	add  codupr varchar(2)  null;
+alter table CPTMResJGuar
+	add  dscupr varchar(55)  null;
+
+alter table CPTMResMp
+	 add  ccosto varchar(2)  null;
+alter table CPTMResMp
+	add  dsccosto varchar(30)  null;
+alter table CPTMResMp
+	add  codupr varchar(2)  null;
+alter table CPTMResMp
+	add  dscupr varchar(55)  null;
+

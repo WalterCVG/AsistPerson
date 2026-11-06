@@ -1,0 +1,12 @@
+-- APLICA HEPCONTROLP   Agosto-2016 CodUPR
+alter table CpTmRecord
+	 add  CCosto varchar(2)  null;
+alter table  CpTmRecord
+	 add  CodUpr varchar(2)  null;
+alter table  CpTmRecord
+	 add  DscUpr varchar(55)  null;
+
+
+alter table CpTmRecord
+	 alter Column  DsccCosto varchar(50)  null;
+
